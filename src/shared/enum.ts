@@ -58,3 +58,16 @@ export enum FriendRelation {
 	/** 黑名单 */
 	BLACKLIST = 2
 }
+
+/**
+ * 群成员角色
+ * @enum {number}
+ */
+export enum GroupRole {
+	/** 普通成员 */
+	MEMBER = 0,
+	/** 管理员 */
+	ADMIN = 1,
+	/** 群主 */
+	OWNER = 2
+}

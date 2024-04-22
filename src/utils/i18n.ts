@@ -4,28 +4,30 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 export const languages = ['zh', 'cn', 'en', 'tc']
 export const defaultLanguage = 'zh'
 
-const translations = await Promise.all(
-	languages.map(async (language) => {
-		const translation = await import(`../locales/${language}.json`)
-		return {
-			[language]: { translation }
+export default (async () => {
+	const locales = await Promise.all(
+		languages.map(async (key) => {
+			const translationModule = await import(`../locales/${key}.json`)
+			return {
+				[key]: {
+					translation: translationModule.default
+				}
+			}
+		})
+	).then((translations) => translations.reduce((acc, cur) => Object.assign(acc, cur), {}))
+
+	i18next.use(LanguageDetector).init({
+		detection: {
+			lookupLocalStorage: 'coss_language'
+		},
+		resources: locales,
+		fallbackLng: defaultLanguage,
+		// debug: false,
+		interpolation: {
+			escapeValue: false
 		}
 	})
-)
-
-const locales = translations.reduce((acc, cur) => Object.assign(acc, cur), {})
-
-export default i18next.use(LanguageDetector).init({
-	detection: {
-		lookupLocalStorage: 'coss_language'
-	},
-	resources: locales,
-	fallbackLng: defaultLanguage,
-	// debug: false,
-	interpolation: {
-		escapeValue: false
-	}
-})
+})()
 
 /**
  * 获取所有语言

@@ -8,6 +8,9 @@ dependencies:
   '@capacitor-community/sqlite':
     specifier: ^5.7.2
     version: 5.7.2(@capacitor/core@6.0.0)
+  '@capacitor/android':
+    specifier: 6.0.0
+    version: 6.0.0(@capacitor/core@6.0.0)
   '@capacitor/app':
     specifier: 6.0.0
     version: 6.0.0(@capacitor/core@6.0.0)
@@ -15,6 +18,9 @@ dependencies:
     specifier: 6.0.0
     version: 6.0.0
   '@capacitor/haptics':
+    specifier: 6.0.0
+    version: 6.0.0(@capacitor/core@6.0.0)
+  '@capacitor/ios':
     specifier: 6.0.0
     version: 6.0.0(@capacitor/core@6.0.0)
   '@capacitor/keyboard':
@@ -35,9 +41,6 @@ dependencies:
   '@types/react-router-dom':
     specifier: ^5.3.3
     version: 5.3.3
-  class-transformer:
-    specifier: ^0.5.1
-    version: 0.5.1
   copyfiles:
     specifier: ^2.4.1
     version: 2.4.1
@@ -53,6 +56,9 @@ dependencies:
   ionicons:
     specifier: ^7.0.0
     version: 7.3.1
+  jeep-sqlite:
+    specifier: ^2.7.0
+    version: 2.7.0
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -1379,6 +1385,14 @@ packages:
       jeep-sqlite: 2.7.0
     dev: false
 
+  /@capacitor/android@6.0.0(@capacitor/core@6.0.0):
+    resolution: {integrity: sha512-NwL87VO9F1WY/EgvJZN9pIhjejq688k2fRW6XWNLVe3cgGE6nUb9J34KI68fhx3139cf2LVGPUYs+mwZC8esiQ==}
+    peerDependencies:
+      '@capacitor/core': ^6.0.0
+    dependencies:
+      '@capacitor/core': 6.0.0
+    dev: false
+
   /@capacitor/app@6.0.0(@capacitor/core@6.0.0):
     resolution: {integrity: sha512-X5UGd90Jh5p9rmoPyMqFyFWqOypdJgVJhYcM5X1YyDVJJGzmJ5MuYv1+ajj5DW9Qyh+5a3th9WYptdGby8jidA==}
     peerDependencies:
@@ -1422,6 +1436,14 @@ packages:
 
   /@capacitor/haptics@6.0.0(@capacitor/core@6.0.0):
     resolution: {integrity: sha512-z2TmB+pTbd98Il2I1xpZGClCFwORxxP2m9f1a0rh70c2ubj2atVyZctgxrx1fuoExZTNGSxHaylWfrmjmtelVg==}
+    peerDependencies:
+      '@capacitor/core': ^6.0.0
+    dependencies:
+      '@capacitor/core': 6.0.0
+    dev: false
+
+  /@capacitor/ios@6.0.0(@capacitor/core@6.0.0):
+    resolution: {integrity: sha512-7mAs3gjWiE5DPM4AGPduqFSDGXCPwwqQRMzbohVway7/cTWnHomHV8mIojMZE4GILeWO2fILbyu3C8q9pHg2vg==}
     peerDependencies:
       '@capacitor/core': ^6.0.0
     dependencies:
@@ -3139,10 +3161,6 @@ packages:
     resolution: {integrity: sha512-NIxF55hv4nSqQswkAeiOi1r83xy8JldOFDTWiug55KBu9Jnblncd2U6ViHmYgHf01TPZS77NJBhBMKdWj9HQMQ==}
     engines: {node: '>=8'}
     dev: true
-
-  /class-transformer@0.5.1:
-    resolution: {integrity: sha512-SQa1Ws6hUbfC98vKGxZH3KFY0Y1lm5Zm0SY8XX9zbK7FJCyVEac3ATW0RIpwzW+oOfmHE5PMPufDG9hCfoEOMw==}
-    dev: false
 
   /clean-stack@2.2.0:
     resolution: {integrity: sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==}
