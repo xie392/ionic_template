@@ -1,0 +1,14 @@
+@import "./variables.scss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/** 自定义 toolbar 最小高度 */
+ion-toolbar {
+    --min-height: 56px;
+}
+
+/** 去除 ios 下头部的分割线 */
+.header-ios ion-toolbar:last-of-type {
+    --border-width: 0 0 0;
+}
