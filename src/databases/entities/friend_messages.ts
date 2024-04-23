@@ -2,7 +2,7 @@ import { MessageStatus, MessageType } from '@/shared/enum'
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn } from 'typeorm'
 
 @Entity('friend_messages')
-export class FriendMessages {
+export class FriendMessagesEntity {
 	@PrimaryGeneratedColumn()
 	id!: number
 

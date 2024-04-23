@@ -2,7 +2,7 @@ import { GroupRole } from '@/shared/enum'
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm'
 
 @Entity('group_members')
-export class GroupMembers {
+export class GroupMembersEntity {
 	@PrimaryGeneratedColumn()
 	id!: number
 

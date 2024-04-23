@@ -41,6 +41,9 @@ dependencies:
   '@types/react-router-dom':
     specifier: ^5.3.3
     version: 5.3.3
+  class-transformer:
+    specifier: ^0.5.1
+    version: 0.5.1
   copyfiles:
     specifier: ^2.4.1
     version: 2.4.1
@@ -53,6 +56,9 @@ dependencies:
   i18next-browser-languagedetector:
     specifier: ^7.2.1
     version: 7.2.1
+  inversify:
+    specifier: ^6.0.2
+    version: 6.0.2
   ionicons:
     specifier: ^7.0.0
     version: 7.3.1
@@ -3162,6 +3168,10 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /class-transformer@0.5.1:
+    resolution: {integrity: sha512-SQa1Ws6hUbfC98vKGxZH3KFY0Y1lm5Zm0SY8XX9zbK7FJCyVEac3ATW0RIpwzW+oOfmHE5PMPufDG9hCfoEOMw==}
+    dev: false
+
   /clean-stack@2.2.0:
     resolution: {integrity: sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==}
     engines: {node: '>=6'}
@@ -4553,6 +4563,10 @@ packages:
       hasown: 2.0.2
       side-channel: 1.0.6
     dev: true
+
+  /inversify@6.0.2:
+    resolution: {integrity: sha512-i9m8j/7YIv4mDuYXUAcrpKPSaju/CIly9AHK5jvCBeoiM/2KEsuCQTTP+rzSWWpLYWRukdXFSl6ZTk2/uumbiA==}
+    dev: false
 
   /ionicons@7.3.1:
     resolution: {integrity: sha512-1boG4EQTBBpQ4/0PU60Yi78Iw/k8iNtKu9c0NmsbzHGnWAcwpiovG9Wi/rk5UlF+DC+CR4XDCxKo91YqvAxkww==}

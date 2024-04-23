@@ -1,8 +1,8 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, ManyToOne } from 'typeorm'
-import { Group } from './group'
+import { GroupEntity } from './group'
 
 @Entity('group_notice')
-export class GroupNotice {
+export class GroupNoticeEntity {
 	@PrimaryGeneratedColumn()
 	id!: number
 
@@ -21,8 +21,8 @@ export class GroupNotice {
 	@Column({ type: 'varchar', default: '', comment: '公告作者id' })
 	authorId!: string
 
-	@ManyToOne(() => Group, (group) => group.notice, {
+	@ManyToOne(() => GroupEntity, (group) => group.notice, {
 		cascade: ['insert']
 	})
-	group!: Group
+	group!: GroupEntity
 }

@@ -1,6 +1,7 @@
 import { StrictMode, createElement } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App'
+import 'reflect-metadata'
 import { JeepSqlite } from 'jeep-sqlite/dist/components/jeep-sqlite'
 import sqliteParams from '@/databases/sqlite_params'
 import { initializeDataSources } from './databases/utilities'

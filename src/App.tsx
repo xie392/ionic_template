@@ -7,13 +7,16 @@ import {
 	IonTabBar,
 	IonTabButton,
 	IonTabs,
-	setupIonicReact
+	setupIonicReact,
+	IonToast
 } from '@ionic/react'
 import { IonReactRouter } from '@ionic/react-router'
 import routes from '~react-pages'
-import { Suspense, createElement } from 'react'
+import { Suspense, createElement, useEffect } from 'react'
 import Loading from './components/loading'
 import { playCircle, radio, library } from 'ionicons/icons'
+import { useIonRouter } from '@ionic/react'
+import { App as CapApp } from '@capacitor/app'
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css'
@@ -44,10 +47,39 @@ import '@ionic/react/css/palettes/dark.system.css'
 
 /* Theme variables */
 import '@/styles/main.scss'
+import { toast } from './shared/toast'
 
 setupIonicReact()
 
 const App: React.FC = () => {
+	const ionRouter = useIonRouter()
+
+	useEffect(() => {
+		// toast('Hello World!')
+		// 监听返回事件
+		const handleBackButton = (ev: any) => {
+			const wihteList = ['/home', '/contact', '/user']
+
+			// 退出程序
+			ev.detail.register(-1, () => {
+				if (!ionRouter.canGoBack()) {
+					// 是否在白名单内
+					if (wihteList.includes(ionRouter.routeInfo.pathname)) {
+						// 提示
+						return
+					}
+					CapApp.exitApp()
+				}
+			})
+		}
+
+		document.addEventListener('ionBackButton', handleBackButton)
+
+		return () => {
+			document.removeEventListener('ionBackButton', handleBackButton)
+		}
+	}, [])
+
 	return (
 		<IonApp>
 			<IonReactRouter>
@@ -63,6 +95,8 @@ const App: React.FC = () => {
 									render={(props) => createElement(route.element.type, props)}
 								/>
 							))}
+							{/* 后备路由 */}
+							<Route render={() => <Redirect to="/home" />} />
 						</Suspense>
 					</IonRouterOutlet>
 

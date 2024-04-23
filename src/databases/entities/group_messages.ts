@@ -1,8 +1,9 @@
 import { MessageStatus, MessageType } from '@/shared/enum'
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn } from 'typeorm'
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, OneToMany } from 'typeorm'
+import { GroupAtEntity } from './group_at'
 
 @Entity('group_messages')
-export class GroupMessages {
+export class GroupMessagesEntity {
 	@PrimaryGeneratedColumn()
 	id!: number
 
@@ -57,8 +58,9 @@ export class GroupMessages {
 	@Column({ type: 'int', default: 0, comment: '消息id' })
 	groupId!: number
 
-	@Column({ type: 'simple-array', default: [], comment: 'at成员 id' })
-	at!: string[]
+	// at
+	@OneToMany(() => GroupAtEntity, (item) => item.message)
+	at!: GroupAtEntity[]
 
 	@Column({ type: 'boolean', default: false, comment: '是否 at 所有人' })
 	atAll!: boolean

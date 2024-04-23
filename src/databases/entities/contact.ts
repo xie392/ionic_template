@@ -1,9 +1,8 @@
 import { FriendRelation } from '@/shared/enum'
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm'
-// import { Exclude } from 'class-transformer'
 
 @Entity('contact')
-export class Contact {
+export class ContactEntity {
 	@PrimaryGeneratedColumn()
 	id!: number
 

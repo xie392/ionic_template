@@ -1,8 +1,8 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm'
-import { GroupNotice } from './group_notice'
+import { GroupNoticeEntity } from './group_notice'
 
 @Entity('group')
-export class Group {
+export class GroupEntity {
 	@PrimaryGeneratedColumn()
 	id!: number
 
@@ -19,6 +19,6 @@ export class Group {
 	memberCount!: number
 
 	// 群公告
-	@OneToMany(() => GroupNotice, (notice) => notice.group)
-	notice!: GroupNotice[]
+	@OneToMany(() => GroupNoticeEntity, (notice) => notice.group)
+	notice!: GroupNoticeEntity[]
 }
