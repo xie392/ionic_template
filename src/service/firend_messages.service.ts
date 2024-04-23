@@ -5,7 +5,7 @@ import { Repository } from 'typeorm'
 @injectable()
 export class FriendMessagesService {
 	constructor(
-		@inject(FriendMessagesEntity)
+		@inject('FriendMessagesRepository')
 		private readonly repo: Repository<FriendMessagesEntity>
 	) {}
 }

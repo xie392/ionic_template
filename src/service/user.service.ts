@@ -19,8 +19,6 @@ export class UserService {
 	 */
 	async findUserById(id: number): Promise<UserEntity> {
 		const result = await this.repo.findBy({ id })
-		console.log('result', result)
-
 		return result[0]
 	}
 
@@ -30,12 +28,13 @@ export class UserService {
 	 * @returns {Promise<UserEntity>}
 	 */
 	async createUser(user: UserEntity): Promise<UserEntity> {
-		const data = plainToInstance(UserEntity, user, { ignoreDecorators: true })
-		const result = await this.manager.transaction(async (transactionalEntityManager) => {
-			return await transactionalEntityManager.save<UserEntity>(data)
-		})
-		console.log('result', result)
-		return result
+		// const data = plainToInstance(UserEntity, user, { ignoreDecorators: true })
+		// this.repo.save(user)
+		// const result = await this.manager.transaction(async (transactionalEntityManager) => {
+		// 	return await transactionalEntityManager.save<UserEntity>(data)
+		// })
+		// console.log('result', result)
+		return await this.repo.save(user)
 	}
 
 	/**

@@ -5,7 +5,7 @@ import { Repository } from 'typeorm'
 @injectable()
 export class GroupService {
 	constructor(
-		@inject(GroupEntity)
+		@inject('GroupRepository')
 		private readonly repo: Repository<GroupEntity>
 	) {}
 }

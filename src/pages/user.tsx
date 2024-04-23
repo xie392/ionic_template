@@ -27,7 +27,7 @@ const UserPage = () => {
 	}
 
 	const findAllUser = async () => {
-		const result = await userService.findUserById(0)
+		const result = await userService.getAllUsers()
 		console.log(result)
 	}
 

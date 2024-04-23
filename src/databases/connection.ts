@@ -28,6 +28,7 @@ const FriendMessagesRepository = dataSource.getRepository(entities.FriendMessage
 const GroupMessagesRepository = dataSource.getRepository(entities.GroupMessagesEntity)
 const GroupMembersRepository = dataSource.getRepository(entities.GroupMembersEntity)
 const GroupNoticeRepository = dataSource.getRepository(entities.GroupNoticeEntity)
+const GroupAtRepository = dataSource.getRepository(entities.GroupAtEntity)
 const GroupRepository = dataSource.getRepository(entities.GroupEntity)
 
 const EntityManagerRepository = dataSource.manager
@@ -40,6 +41,7 @@ export {
 	GroupMembersRepository,
 	GroupNoticeRepository,
 	GroupRepository,
+	GroupAtRepository,
 	EntityManagerRepository
 }
 
